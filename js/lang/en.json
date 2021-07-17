@@ -1,0 +1,14 @@
+{
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "mainmenu": "Main Menu",
+    "dashboard": "Dashboard",
+    "title": "Base elements",
+    "label": "Sample text",
+    "first": "First",
+    "second": "Second",
+    "third": "Third",
+    "click": "Click it!",
+    "select": "Select me"
+}

@@ -1,0 +1,1185 @@
+/*  (C) 2021 Bruno Tessaro
+ *  NoosUI.css
+ *  #v 1.2021.2.4
+ */
+
+
+/* ------------------------------------
+ * Variables */
+
+.themeblu {
+    --primary-color-solid: rgb(17, 0, 255);
+    --primary-color-light: rgb(133, 100, 255);
+    --primary-color-verylight: rgb(202, 193, 255);
+    --secondary-color-solid: rgb(0, 140, 255);
+    --secondary-color-light: rgb(87, 216, 255);
+    --secondary-color-verylight: rgb(202, 244, 255);
+    --complementary-color: rgb(21, 255, 0);
+    --complementary-color-light: rgb(93, 255, 93);
+    --complementary-color-verylight: rgb(197, 255, 200);
+    --background: rgb(255, 255, 255);
+    --primary-color-text: rgb(0, 0, 0);
+    --secondary-color-text: rgb(255, 255, 255);
+}
+
+.themegray {
+    --primary-color-solid: rgb(33, 37, 41);
+    --primary-color-light: rgb(93, 97, 101);
+    --primary-color-verylight: rgb(233, 237, 241);
+    --secondary-color-solid: rgb(52, 58, 64);
+    --secondary-color-light: rgb(152, 158, 164);
+    --secondary-color-verylight: rgb(252, 255, 255);
+    --complementary-color: rgb(0, 123, 255);
+    --complementary-color-light: rgb(40, 153, 255);
+    --complementary-color-verylight: rgb(197, 255, 200);
+    --background: rgb(255, 255, 255);
+    --primary-color-text: rgb(33, 37, 41);
+    --secondary-color-text: rgb(144, 146, 148);
+}
+
+
+/* ------------------------------------
+ * Fonts */
+
+@font-face {
+    font-family: 'HP Simplified';
+    src: url('../fonts/hp-simplified.ttf');
+}
+
+@font-face {
+    font-family: 'HP Simplified Bold';
+    src: url('../fonts/hp-simplified-bold.ttf');
+}
+
+
+/* ------------------------------------
+ * Modal popup */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--background);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--secondary-color-verylight);
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: modalanimatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: modalanimatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes modalanimatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes modalanimatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.modal-close {
+    color: var(--secondary-color-text);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: var(--complementary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: var(--secondary-color-solid);
+    color: var(--secondary-color-text);
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: var(--secondary-color-solid);
+    color: var(--secondary-color-text);
+}
+
+
+/* ------------------------------------
+ * Login Page UI Element */
+
+.loginpage {
+    text-align: center;
+    font-family: 'HP Simplified';
+    overflow: hidden;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-image: url("../img/loginbg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.loginpage input[type="password"]:focus,
+.loginpage input[type="text"]:focus {
+    border: solid 2px #aaaaaa;
+    box-shadow: 0 0 5px #aaaaaa;
+}
+
+.loginpage input[type="password"],
+.loginpage input[type="text"] {
+    border: solid 2px #aaaaaa00;
+    box-shadow: 0 0 5px #aaaaaa00;
+}
+
+
+/* ------------------------------------
+ * SideMenu Page UI Element */
+
+.sidemenupage {
+    font-family: 'HP Simplified';
+    margin: 0;
+    --sidebar-width: 225px;
+    --border-radius: 4px;
+    --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
+}
+
+.sidemenupage i {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.5rem;
+}
+
+.sidemenupage ul {
+    list-style: none;
+}
+
+.sidemenupage a,
+.sidemenupage button {
+    color: inherit;
+    cursor: pointer;
+}
+
+.sidemenupage a {
+    text-decoration: none;
+}
+
+.sidemenupage button {
+    background: none;
+    cursor: pointer;
+}
+
+.sidemenupage input {
+    -webkit-appearance: none;
+}
+
+.sidemenupage button,
+.sidemenupage input {
+    border: none;
+}
+
+.sidemenupage input[type="password"]:focus,
+.sidemenupage input[type="text"]:focus {
+    border: solid 2px #aaaaaa;
+    box-shadow: 0 0 5px #aaaaaa;
+}
+
+.sidemenupage input[type="password"],
+.sidemenupage input[type="text"] {
+    border: solid 2px #aaaaaa00;
+    box-shadow: 0 0 5px #aaaaaa00;
+}
+
+.iconspan {
+    margin-left: 15px;
+}
+
+
+/* ------------------------------------
+ * Sidemenubar UI Element */
+
+.sidemenubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-top: 20px;
+    width: var(--sidebar-width);
+    color: var(--secondary-color-text);
+    background: var(--primary-color-solid);
+}
+
+.sidemenubar *:not(.iconspan) {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sidemenubar nav {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.sidemenubar .logo {
+    display: block;
+    max-width: 120px;
+    max-height: 80px;
+    margin: 0 15px;
+}
+
+.sidemenubar .toggle-mob-menu {
+    display: none;
+    margin-left: 5px;
+    padding: 4px;
+    background: var(--secondary-color-solid);
+    border-radius: var(--border-radius);
+}
+
+.sidemenubar .admin-menu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 35px;
+}
+
+.sidemenubar .admin-menu li:nth-last-child(2) {
+    margin-bottom: 0px;
+}
+
+.sidemenubar .admin-menu li:last-child {
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
+.sidemenubar .admin-menu li>* {
+    width: 100%;
+    padding: 12px 15px;
+}
+
+.sidemenubar .admin-menu .menu-heading h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    margin-top: 12px;
+    color: var(--primary-color-light);
+}
+
+.sidemenubar .admin-menu a,
+.sidemenubar .admin-menu button {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidemenubar .admin-menu a:hover,
+.sidemenubar .admin-menu a:focus,
+.sidemenubar .admin-menu button:hover,
+.sidemenubar .admin-menu button:focus {
+    background: var(--primary-color-verylight);
+    color: var(--secondary-color-solid);
+    outline: none;
+}
+
+.sidemenubar .admin-menu {
+    transition: all 0.2s;
+}
+
+.mob-menu-opened .sidemenubar .admin-menu {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ------------------------------------
+ * PagePanel UI Element */
+
+.pagepanel {
+    position: relative;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+    color: var(--primary-color-text);
+    background: var(--background);
+}
+
+.pagepanel * {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ------------------------------------
+ * Headerbar UI Element */
+
+.headerbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: 50px;
+    padding: 10px;
+    align-items: center;
+    color: var(--secondary-color-text);
+    background: var(--secondary-color-solid);
+    margin-bottom: 5px;
+}
+
+.headerbar form {
+    position: relative;
+}
+
+.headerbar input[type="search"] {
+    width: 100%;
+    height: 35px;
+    font-size: 1.5rem;
+    padding-left: 15px;
+    background: var(--background);
+    color: var(--primary-color-text);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.headerbar form button {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.headerbar .admin-profile {
+    display: flex;
+    align-items: center;
+}
+
+.headerbar .admin-profile .greeting {
+    margin: 0 10px 0 20px;
+}
+
+.headerbar .admin-profile .notifications {
+    cursor: pointer;
+    position: relative;
+}
+
+.headerbar .admin-profile .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: 35px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: var(--primary-color-text);
+    background: var(--complementary-color);
+}
+
+
+/* ------------------------------------
+ * MainPanel UI Element */
+
+.mainpanel {
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+.mainpanel>article {
+    display: flex;
+    background: var(--primary-color-verylight);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+
+/* ------------------------------------
+ * Grids UI Element */
+
+.grid1x1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid1e2,
+.grid2e1,
+.grid2x2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid3e1,
+.grid1e3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid4e1,
+.grid1e4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid1e2>article:first-child,
+.grid1e3>article:first-child,
+.grid1e4>article:first-child {
+    grid-column: 1 / -1;
+}
+
+.grid2e1>article:last-child,
+.grid3e1>article:last-child,
+.grid4e1>article:last-child {
+    grid-column: 1 / -1;
+}
+
+
+/* Responsive grid */
+
+@media screen and (max-width: 400px) {
+    .grid1e2>article,
+    .grid2e1>article,
+    .grid2x2>article {
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .grid3e1>article,
+    .grid1e3>article,
+    .grid4e1>article,
+    .grid1e4>article {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* ------------------------------------
+ * Footer UI Element */
+
+.footer {
+    position: fixed;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    bottom: 0;
+    height: 40px;
+    padding-top: 10px;
+    background-color: var(--primary-color-verylight);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+
+/* ------------------------------------
+ * Responsive Element */
+
+@media screen and (max-width: 767px) {
+    .sidemenubar,
+    .pagepanel {
+        position: static;
+        width: 100%;
+    }
+    .footer {
+        left: 0;
+        width: 100%;
+    }
+    .sidemenubar {
+        padding: 10px;
+    }
+    .sidemenubar nav {
+        flex-direction: row;
+    }
+    .sidemenubar .logo {
+        margin: 0;
+        height: 35px;
+    }
+    .sidemenubar .toggle-mob-menu {
+        display: block;
+        background: var(--primary-color-solid);
+        font-size: 1.5rem;
+    }
+    .sidemenubar .admin-menu {
+        position: absolute;
+        left: 0px;
+        top: 54px;
+        width: 100%;
+        margin-top: 0;
+        z-index: 2;
+        border-radius: 0;
+        background: var(--secondary-color-solid);
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.95);
+        transition: all 0.2s;
+    }
+    .sidemenubar .admin-menu li:nth-last-child(2) {
+        margin-bottom: 12px;
+    }
+    .sidemenubar .admin-menu li:last-child,
+    .headerbar .admin-profile .greeting {
+        display: none;
+    }
+    .pagepanel {
+        min-height: 0;
+        padding: 10px;
+    }
+    .headerbar {
+        position: absolute;
+        left: 131px;
+        top: 10px;
+        padding: 0;
+        grid-column-gap: 5px;
+        width: calc(100% - 141px);
+        border-radius: var(--border-radius);
+        background: transparent;
+    }
+    .headerbar input[type="search"] {
+        font-size: 1rem;
+        height: 35px;
+    }
+}
+
+
+/* Toggle SideMenu */
+
+@media screen and (min-width: 768px) {
+    .collapsed .sidemenubar {
+        width: 40px;
+    }
+    .collapsed .sidemenubar .admin-menu li>* {
+        padding: 10px;
+    }
+    .collapsed .sidemenubar .logo,
+    .collapsed .sidemenubar .admin-menu span,
+    .collapsed .sidemenubar .admin-menu .menu-heading {
+        display: none;
+    }
+    .collapsed .pagepanel,
+    .collapsed .footer {
+        left: 40px;
+        width: calc(100% - 40px);
+    }
+}
+
+
+/* ------------------------------------
+ * LoginBox UI Element */
+
+.loginbox-inner-container {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: calc(50vh - 250px);
+    left: calc(50vw - 200px);
+    overflow: hidden;
+    box-shadow: 0px 0px 40px 20px var(--primary-color-verylight);
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+}
+
+.loginbox {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: 'HP Simplified';
+    color: var(--secondary-color-text);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 30px 0px;
+}
+
+.loginbox h1 {
+    font-family: 'HP Simplified Bold';
+    text-align: center;
+    margin: 30px 0;
+    font-size: 30px;
+}
+
+.loginbox input {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--secondary-color-text);
+    border: 0;
+}
+
+.loginbox input:focus,
+.loginbox input:active,
+.loginbox button:focus,
+.loginbox button:active {
+    outline: none;
+}
+
+.loginbox button {
+    background: var(--secondary-color-solid);
+    border: 0;
+    color: var(--secondary-color-text);
+    padding: 10px;
+    font-size: 20px;
+    width: 330px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+}
+
+.loginbox button:active {
+    background: var(--secondary-color-light);
+}
+
+.loginbox p {
+    font-size: 14px;
+    text-align: center;
+}
+
+.loginbox p span {
+    cursor: pointer;
+    color: #666;
+}
+
+
+/* ------------------------------------
+ * Panel UI Elements */
+
+.panel-block,
+.panel-inline {
+    padding: 10px;
+    width: 100%;
+}
+
+.panel-block * {
+    display: block;
+    width: 100%;
+}
+
+.panel-inline * {
+    display: inline;
+}
+
+
+/* ------------------------------------
+ * Button UI Elements */
+
+button.btn {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-appearance: button;
+    user-select: none;
+    border: 2px solid transparent;
+    padding: 8px;
+    margin: 10px 0 10px 0;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    transition: 0.3s;
+}
+
+button.btn-primary:hover {
+    background-color: var(--complementary-color-light);
+    border-color: var(--complementary-color-light);
+}
+
+button.btn-secondary:hover {
+    background-color: var(--primary-color-light);
+    border-color: var(--primary-color-light);
+}
+
+button.btn-primary {
+    background-color: var(--complementary-color);
+    border-color: var(--complementary-color);
+    color: var(--primary-color-text);
+}
+
+button.btn-secondary {
+    background-color: var(--secondary-color-solid);
+    border-color: var(--secondary-color-solid);
+    color: var(--secondary-color-text);
+}
+
+
+/* ------------------------------------
+ * Title, Label UI Elements */
+
+h2.title {
+    margin: 0 0 10px 0;
+    font-family: 'HP Simplified Bold';
+    font-size: 1.5rem;
+    font-variant: small-caps;
+    text-align: center;
+    color: var(--primary-color-text);
+}
+
+h1.label {
+    margin: 10px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color-text);
+}
+
+
+/* ------------------------------------
+ * Textbox UI Elements */
+
+input.textbox {
+    border: 2px solid transparent;
+    padding: 8px;
+    margin: 10px 0 10px 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+/* ------------------------------------
+ * TextArea UI Elements */
+
+textarea.textarea {
+    border: 2px solid transparent;
+    padding: 8px;
+    margin: 10px 0 10px 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* ------------------------------------
+ * Input Password UI Elements */
+
+.pagepanel input[type=password] {
+    border: 2px solid transparent;
+    padding: 8px;
+    margin: 10px 0 10px 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* ------------------------------------
+ * Combobox UI Elements */
+
+.combobox-wrapper {
+    user-select: none;
+    width: 100%;
+}
+
+.combobox-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.combobox-select_trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--primary-color-text);
+    height: 44px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    border-color: #aaaaaa00;
+}
+
+.combobox-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 0;
+    border: 2px solid #aaaaaa99;
+    border-radius: var(--border-radius);
+    background: var(--background);
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.combobox-select.open .combobox-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.combobox-option {
+    position: relative;
+    display: block;
+    padding: 0 22px 0 22px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--primary-color-text);
+    line-height: 35px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.combobox-option:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-verylight);
+}
+
+.combobox-option.selected {
+    color: var(--primary-color-text);
+    background-color: var(--primary-color-light);
+}
+
+.combobox-arrow {
+    position: relative;
+    height: 15px;
+    width: 15px;
+}
+
+.combobox-arrow::before,
+.combobox-arrow::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 0.15rem;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+.combobox-arrow::before {
+    left: 12px;
+    transform: rotate(45deg);
+    background-color: var(--primary-color-solid);
+}
+
+.combobox-arrow::after {
+    left: 22px;
+    transform: rotate(-45deg);
+    background-color: var(--primary-color-solid);
+}
+
+.open .combobox-arrow::before {
+    left: 12px;
+    transform: rotate(-45deg);
+}
+
+.open .combobox-arrow::after {
+    left: 22px;
+    transform: rotate(45deg);
+}
+
+
+/* ------------------------------------
+ * Checkbox, Switch, Radio UI Elements */
+
+input.element[type=checkbox],
+input.element[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--secondary-color-verylight));
+    background: var(--b, rgba(0, 0, 0, 0.2));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+
+input.element[type=checkbox]:after,
+input.element[type=radio]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+}
+
+input.element[type=checkbox]:checked,
+input.element[type=radio]:checked {
+    --b: var(--secondary-color-solid);
+    --bc: var(--secondary-color-solid);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+input.element[type=checkbox]:disabled,
+input.element[type=radio]:disabled {
+    --b: var(--secondary-color-verylight);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+input.element[type=checkbox]:disabled:checked,
+input.element[type=radio]:disabled:checked {
+    --b: var(--secondary-color-light);
+    --bc: var(--secondary-color-verylight);
+}
+
+input.element[type=checkbox]:disabled+label,
+input.element[type=radio]:disabled+label {
+    cursor: not-allowed;
+}
+
+input.element[type=checkbox]:hover:not(:checked):not(:disabled),
+input.element[type=radio]:hover:not(:checked):not(:disabled) {
+    --bc: var(--secondary-color-solid);
+}
+
+input.element[type=checkbox]:focus,
+input.element[type=radio]:focus {
+    box-shadow: 0 0 0 var(--complementary-color-light);
+}
+
+input.element[type=checkbox]:not(.switch),
+input.element[type=radio]:not(.switch) {
+    width: 21px;
+}
+
+input.element[type=checkbox]:not(.switch):after,
+input.element[type=radio]:not(.switch):after {
+    opacity: var(--o, 0);
+}
+
+input.element[type=checkbox]:not(.switch):checked,
+input.element[type=radio]:not(.switch):checked {
+    --o: 1;
+}
+
+input.element[type=checkbox]+label,
+input.element[type=radio]+label {
+    font-size: 1rem;
+    line-height: 44px;
+    display: inline;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+input.element[type=checkbox]:not(.switch) {
+    border-radius: 7px;
+}
+
+input.element[type=checkbox]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--background);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg));
+}
+
+input.element[type=checkbox]:not(.switch):checked {
+    --r: 43deg;
+}
+
+input.element[type=checkbox].switch {
+    width: 38px;
+    border-radius: 11px;
+}
+
+input.element[type=checkbox].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--secondary-color-verylight));
+    transform: translateX(var(--x, 0));
+}
+
+input.element[type=checkbox].switch:checked {
+    --ab: var(--background);
+    --x: 17px;
+}
+
+input.element[type=checkbox].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+}
+
+input.element[type=radio] {
+    border-radius: 50%;
+}
+
+input.element[type=radio]:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--background);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+}
+
+input.element[type=radio]:checked {
+    --s: 0.5;
+}
+
+
+/* ------------------------------------
+ * LabelFor UI Elements */
+
+.labelfor {
+    padding: 8px;
+}
+
+
+/* ------------------------------------
+ * Slider UI Elements */
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    margin: 10px 0 10px 0;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: var(--border-radius);
+    background: var(--secondary-color-solid);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: var(--border-radius);
+    background: var(--secondary-color-solid);
+    cursor: pointer;
+}
+
+
+/* ------------------------------------
+ * Progress UI Elements */
+
+.progress {
+    width: 100%;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    margin: 10px 0 10px 0;
+}
+
+.progress[value]::-webkit-progress-bar {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+}
+
+.progress[value]::-webkit-progress-value {
+    background-image: -webkit-linear-gradient(top, var(--complementary-color), var(--complementary-color));
+    border-radius: 2px;
+    background-size: 10px 45px, 100% 100%, 100% 100%;
+}
+
+
+/* ------------------------------------
+ * Table UI Elements */
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.table th {
+    cursor: pointer;
+    height: 44px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--primary-color-text);
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+    padding: 5px;
+}
+
+table.table td {
+    text-align: left;
+    cursor: pointer;
+    border-bottom: 1px solid var(--secondary-color-light);
+    vertical-align: top;
+    padding: 5px;
+}
+
+table.table tr:nth-child(even) {
+    background-color: var(--secondary-color-verylight);
+}
+
+table.table tr:hover {
+    background-color: var(--primary-color-light);
+    color: var(--secondary-color-text);
+    font-weight: 900;
+}
+
+
+/* ------------------------------------
+ * Image UI Elements */
+
+img.image {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    margin: 10px 0 10px 0;
+}
